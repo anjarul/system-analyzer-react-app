@@ -1,20 +1,34 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 
-function InputForm({ onSubmit }) {
+function InputForm({onSubmit}) {
     const [from, setFrom] = useState('');
     const [to, setTo] = useState('');
     const [phrase, setPhrase] = useState('');
 
+    useEffect(() => {
+        const today = new Date();
+        const firstDateOfCurrentMonth = today;
+        firstDateOfCurrentMonth.setDate(1);
+
+        // Format dates as YYYY-MM-DDTHH:MM
+        const formatDate = (date) => {
+            return date.toISOString().slice(0, 16);
+        };
+
+        setFrom(formatDate(firstDateOfCurrentMonth));
+        setTo(formatDate(today));
+    }, []);
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        onSubmit({ from, to, phrase });
+        onSubmit({from, to, phrase});
     };
 
     return (
         <form onSubmit={handleSubmit}>
-            <input type="datetime-local" value={from} onChange={(e) => setFrom(e.target.value)} placeholder="From" />
-            <input type="datetime-local" value={to} onChange={(e) => setTo(e.target.value)} placeholder="To" />
-            <input type="text" value={phrase} onChange={(e) => setPhrase(e.target.value)} placeholder="Search Phrase" />
+            <input type="datetime-local" value={from} onChange={(e) => setFrom(e.target.value)} placeholder="From"/>
+            <input type="datetime-local" value={to} onChange={(e) => setTo(e.target.value)} placeholder="To"/>
+            <input type="text" value={phrase} onChange={(e) => setPhrase(e.target.value)} placeholder="Search Phrase"/>
             <button type="submit">Submit</button>
         </form>
     );
