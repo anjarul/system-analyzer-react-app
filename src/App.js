@@ -8,6 +8,7 @@ function App() {
     const [logs, setLogs] = useState([]);
     const [histogram, setHistogram] = useState([]);
     const url = "http://localhost:8080/api";
+    const [phrase, setPhrase] = useState('');
 
     const handleSearch = async ({from, to, phrase}) => {
         try {
@@ -15,15 +16,10 @@ function App() {
                 datetimeFrom: from,
                 datetimeUntil: to,
                 phrase: phrase
-            }, {
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-                .then(response => console.log(response.data))
-                .catch(error => console.error('Error:', error));
+            });
 
             setLogs(response.data.data);
+            setPhrase(response.data.phrase);
 
             const histogramResponse = await axios.post(`${url}/histogram`, {
                 datetimeFrom: from,
@@ -40,7 +36,7 @@ function App() {
         <div className="App">
             <h1>System Log Analyzer</h1>
             <InputForm onSubmit={handleSearch}/>
-            <LogTable logs={logs} phrase={logs.phrase}/>
+            <LogTable logs={logs} phrase={phrase}/>
             <Histogram data={histogram}/>
         </div>
     );
