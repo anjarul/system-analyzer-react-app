@@ -1,44 +1,16 @@
-import React, {useState} from 'react';
-import axios from 'axios';
-import InputForm from './components/InputForm';
-import LogTable from './components/LogTable';
-import Histogram from './components/Histogram';
+import React from 'react';
+import LogAnalyzer from "./logAnalyzer/components/views/LogAnalyzer";
 
 function App() {
-    const [logs, setLogs] = useState([]);
-    const [histogram, setHistogram] = useState([]);
-    const url = "http://localhost:8080/api";
-    const [phrase, setPhrase] = useState('');
-
-    const handleSearch = async ({from, to, phrase}) => {
-        try {
-            const response = await axios.post(`${url}/data`, {
-                datetimeFrom: from,
-                datetimeUntil: to,
-                phrase: phrase
-            });
-
-            setLogs(response.data.data);
-            setPhrase(response.data.phrase);
-
-            const histogramResponse = await axios.post(`${url}/histogram`, {
-                datetimeFrom: from,
-                datetimeUntil: to,
-                phrase: phrase
-            });
-            setHistogram(histogramResponse.data.histogram);
-        } catch (error) {
-            console.error('Error fetching data:', error);
-        }
-    };
-
     return (
-        <div className="App">
-            <h1>System Log Analyzer</h1>
-            <InputForm onSubmit={handleSearch}/>
-            <LogTable logs={logs} phrase={phrase}/>
-            <Histogram data={histogram}/>
+        // <ErrorBoundary>
+        <div className="min-h-screen bg-gray-50">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <h1 className="text-3xl font-bold text-gray-900 mb-8">System Log Analyzer</h1>
+                <LogAnalyzer/>
+            </div>
         </div>
+        // </ErrorBoundary>
     );
 }
 
