@@ -14,6 +14,6 @@ export const validateDateRange = (fromDate, toDate) => {
 
 export const validateSearchPhrase = (phrase) => {
     if (!phrase?.trim()) return 'Search phrase is required';
-    if (phrase.length < 2) return 'Search phrase must be at least 2 characters';
+    if (phrase.length < 1) return 'Search phrase must be at least 2 characters';
     return null;
 };

@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'react';
 import DateTimeInput from './DateTimeInput';
 import SearchInput from './SearchInput';
-import { useFormValidation } from '../../hooks/useFormValidation';
-import { getFirstDayOfMonth, getCurrentDateTime, formatDateTime } from '../../../utils/dateUtils';
+import {useFormValidation} from '../../hooks/useFormValidation';
+import {getFirstDayOfMonth, getCurrentDateTime, formatDateTime} from '../../../utils/dateUtils';
 
-const InputForm = ({ onSubmit }) => {
+const InputForm = ({onSubmit}) => {
     const {
         values,
         errors,
@@ -39,7 +39,7 @@ const InputForm = ({ onSubmit }) => {
 
     return (
         <form onSubmit={handleSubmit} className="p-6 space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="flex flex-wrap gap-6 items-center">
                 <DateTimeInput
                     id="from"
                     label="From Date"
@@ -55,25 +55,24 @@ const InputForm = ({ onSubmit }) => {
                     onChange={(e) => handleChange('to', e.target.value)}
                     error={errors.to}
                 />
+
+                <SearchInput
+                    value={values.phrase}
+                    onChange={(e) => handleChange('phrase', e.target.value)}
+                    error={errors.phrase}
+                />
+
+                <button
+                    type="submit"
+                    disabled={!isValid}
+                    className={`p-3 rounded-md text-white font-medium ${isValid ? 'bg-blue-600 hover:bg-blue-700'
+                        : 'bg-gray-400 cursor-not-allowed'}`}>
+                    Search Logs
+                </button>
+
             </div>
 
-            <SearchInput
-                value={values.phrase}
-                onChange={(e) => handleChange('phrase', e.target.value)}
-                error={errors.phrase}
-            />
 
-            <button
-                type="submit"
-                disabled={!isValid}
-                className={`w-full p-3 rounded-md text-white font-medium
-          ${isValid
-                    ? 'bg-blue-600 hover:bg-blue-700'
-                    : 'bg-gray-400 cursor-not-allowed'
-                }`}
-            >
-                Search Logs
-            </button>
         </form>
     );
 };

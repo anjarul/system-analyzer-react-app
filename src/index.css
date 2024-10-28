@@ -2,85 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-/*body {*/
-/*  font-family: Arial, sans-serif;*/
-/*  background-color: #f0f2f5;*/
-/*  margin: 0;*/
-/*  padding: 0;*/
-/*  box-sizing: border-box;*/
-/*}*/
-
-/*!* Container *!*/
-/*.App {*/
-/*  max-width: 817px;*/
-/*  margin: 50px auto;*/
-/*  padding: 20px;*/
-/*  background-color: white;*/
-/*  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
-/*  border-radius: 8px;*/
-/*}*/
-
-/*!* Input Form *!*/
-/*form {*/
-/*  display: flex;*/
-/*  gap: 10px;*/
-/*  margin-bottom: 20px;*/
-/*}*/
-
-/*input {*/
-/*  padding: 10px;*/
-/*  border: 1px solid #ddd;*/
-/*  border-radius: 4px;*/
-/*  font-size: 16px;*/
-/*}*/
-
-/*button {*/
-/*  background-color: #4CAF50;*/
-/*  color: white;*/
-/*  border: none;*/
-/*  padding: 10px 20px;*/
-/*  font-size: 16px;*/
-/*  border-radius: 4px;*/
-/*  cursor: pointer;*/
-/*  transition: background-color 0.3s ease;*/
-/*}*/
-
-/*button:hover {*/
-/*  background-color: #45a049;*/
-/*}*/
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 /*!* Log Table *!*/
-/*table {*/
-/*  width: 100%;*/
-/*  border-collapse: collapse;*/
-/*  margin-top: 20px;*/
-/*}*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
 
-/*th, td {*/
-/*  padding: 12px;*/
-/*  text-align: left;*/
-/*  border-bottom: 1px solid #ddd;*/
-/*}*/
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
 
-/*th {*/
-/*  background-color: #f2f2f2;*/
-/*  font-weight: bold;*/
-/*}*/
-
-/*tr:hover {*/
-/*  background-color: #f1f1f1;*/
-/*}*/
-
-/*!* Highlighted Phrase *!*/
-/*mark {*/
-/*  background-color: yellow;*/
-/*  font-weight: bold;*/
-/*  padding: 0 4px;*/
-/*}*/
-
-/*!* Histogram Container *!*/
-/*.recharts-wrapper {*/
-/*  margin-top: 30px;*/
-/*  display: flex;*/
-/*  justify-content: center;*/
-/*}*/
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}

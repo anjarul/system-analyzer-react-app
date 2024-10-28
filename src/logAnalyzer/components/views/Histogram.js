@@ -29,7 +29,6 @@ const Histogram = ({ data }) => {
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis
                         dataKey="datetime"
-                        tickFormatter={(value) => new Date(value).toLocaleTimeString()}
                     />
                     <YAxis />
                     <Tooltip content={<CustomTooltip />} />

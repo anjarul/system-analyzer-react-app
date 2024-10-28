@@ -1,7 +1,7 @@
 import React from 'react';
 
-const LogTable = ({ logs }) => {
-    const HighlightedMessage = ({ message, highlights }) => {
+const LogTable = ({logs}) => {
+    const HighlightedMessage = ({message, highlights}) => {
         if (!highlights || highlights.length === 0) {
             return <span>{message}</span>;
         }
@@ -39,9 +39,9 @@ const LogTable = ({ logs }) => {
     };
 
     return (
-        <div className="overflow-x-auto">
-            <table className="min-w-full">
-                <thead className="bg-gray-50">
+        <div className="overflow-auto max-h-96">
+            <table className="min-w-full table-auto border-collapse border border-gray-300">
+                <thead className="bg-gray-50 sticky top-0">
                 <tr>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Datetime

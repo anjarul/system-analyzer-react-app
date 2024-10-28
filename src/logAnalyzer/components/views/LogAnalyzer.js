@@ -1,9 +1,9 @@
 import React from 'react';
 import {useLogAnalyzer} from "../../hooks/useLogAnalyzer";
-import InputForm from "../form/InputForm";
 import LoadingSpinner from "../../../common/LoadingSpinner";
 import LogTable from "./LogTable";
 import Histogram from "./Histogram";
+import InputForm from "../form/InputForm";
 
 
 const LogAnalyzer = () => {
