@@ -7,7 +7,7 @@ function InputForm({onSubmit}) {
 
     useEffect(() => {
         const today = new Date();
-        const firstDateOfCurrentMonth = today;
+        const firstDateOfCurrentMonth = new Date();
         firstDateOfCurrentMonth.setDate(1);
 
         // Format dates as YYYY-MM-DDTHH:MM
