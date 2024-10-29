@@ -6,5 +6,5 @@ export const API_CONFIG = {
         DATA: '/data',
         HISTOGRAM: '/histogram'
     },
-    TIMEOUT: 30000 // 30 seconds
+    TIMEOUT: 30000
 };

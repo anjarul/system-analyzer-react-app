@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import DateTimeInput from './DateTimeInput';
 import SearchInput from './SearchInput';
-import {useFormValidation} from '../../hooks/useFormValidation';
+import {formValidationHook} from '../../hooks/formValidationHook';
 import {getFirstDayOfMonth, getCurrentDateTime, formatDateTime} from '../../../utils/dateUtils';
 
 const InputForm = ({onSubmit}) => {
@@ -12,7 +12,7 @@ const InputForm = ({onSubmit}) => {
         validate,
         setValues,
         isValid
-    } = useFormValidation({
+    } = formValidationHook({
         from: '',
         to: '',
         phrase: ''
@@ -39,7 +39,7 @@ const InputForm = ({onSubmit}) => {
 
     return (
         <form onSubmit={handleSubmit} className="p-6 space-y-6">
-            <div className="flex flex-wrap gap-6 items-center">
+            <div className="flex flex-wrap gap-6 items-end">
                 <DateTimeInput
                     id="from"
                     label="From Date"

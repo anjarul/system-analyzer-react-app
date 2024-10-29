@@ -12,10 +12,7 @@ const LogTable = ({logs}) => {
         highlights.forEach((highlight, index) => {
             if (lastIndex < highlight.fromPosition) {
                 parts.push(
-                    <span key={`text-${index}`}>
-            {message.substring(lastIndex, highlight.fromPosition)}
-          </span>
-                );
+                    <span key={`text-${index}`}>{message.substring(lastIndex, highlight.fromPosition)}</span>);
             }
 
             parts.push(
@@ -29,10 +26,7 @@ const LogTable = ({logs}) => {
 
         if (lastIndex < message.length) {
             parts.push(
-                <span key="text-end">
-          {message.substring(lastIndex)}
-        </span>
-            );
+                <span key="text-end">{message.substring(lastIndex)}</span>);
         }
 
         return <>{parts}</>;

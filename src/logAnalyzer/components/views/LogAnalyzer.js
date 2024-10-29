@@ -1,5 +1,5 @@
 import React from 'react';
-import {useLogAnalyzer} from "../../hooks/useLogAnalyzer";
+import {logAnalyzerHook} from "../../hooks/logAnalyzerHook";
 import LoadingSpinner from "../../../common/LoadingSpinner";
 import LogTable from "./LogTable";
 import Histogram from "./Histogram";
@@ -7,7 +7,7 @@ import InputForm from "../form/InputForm";
 
 
 const LogAnalyzer = () => {
-    const {logs, histogram, loading, error, fetchData} = useLogAnalyzer();
+    const {logs, histogram, loading, error, fetchData} = logAnalyzerHook();
 
     return (
         <div className="space-y-8">

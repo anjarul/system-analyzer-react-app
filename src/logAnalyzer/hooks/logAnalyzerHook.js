@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { logService } from '../services/logService';
 
-export const useLogAnalyzer = () => {
+export const logAnalyzerHook = () => {
     const [logs, setLogs] = useState(null);
     const [histogram, setHistogram] = useState([]);
     const [loading, setLoading] = useState(false);
